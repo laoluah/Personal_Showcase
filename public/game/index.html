@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Sport Arena</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Multi-Sport Arena</h1>
+            <div class="score-container">
+                <div class="player player1 active" data-player="1">
+                    <div class="player-name">Player 1</div>
+                    <div class="player-score">0</div>
+                </div>
+                <div class="player player2" data-player="2">
+                    <div class="player-name">Player 2</div>
+                    <div class="player-score">0</div>
+                </div>
+                <div class="player player3" data-player="3">
+                    <div class="player-name">Player 3</div>
+                    <div class="player-score">0</div>
+                </div>
+                <div class="player player4" data-player="4">
+                    <div class="player-name">Player 4</div>
+                    <div class="player-score">0</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-info">
+            <div class="current-player">Player 1's Turn</div>
+            <div class="action-text">Select a sport to play</div>
+        </div>
+
+        <div class="arena">
+            <!-- Sports selection area -->
+            <div class="sports-selection">
+                <div class="sport-option" data-sport="football">
+                    <div class="sport-icon"><i class="fas fa-futbol"></i></div>
+                    <div class="sport-name">Football</div>
+                    <div class="sport-points">1 point</div>
+                </div>
+                <div class="sport-option" data-sport="american-football">
+                    <div class="sport-icon"><i class="fas fa-football"></i></div>
+                    <div class="sport-name">American Football</div>
+                    <div class="sport-points">2 points</div>
+                </div>
+                <div class="sport-option" data-sport="cricket">
+                    <div class="sport-icon"><i class="fas fa-baseball-bat-ball"></i></div>
+                    <div class="sport-name">Cricket</div>
+                    <div class="sport-points">3 points</div>
+                </div>
+                <div class="sport-option" data-sport="basketball">
+                    <div class="sport-icon"><i class="fas fa-basketball"></i></div>
+                    <div class="sport-name">Basketball</div>
+                    <div class="sport-points">4 points</div>
+                </div>
+            </div>
+
+            <!-- Game play area - initially hidden, shown during sport play -->
+            <div class="game-play hidden">
+                <!-- Football (Soccer) -->
+                <div class="sport-game football-game" id="football-game">
+                    <div class="goal-area">
+                        <div class="goal"></div>
+                        <div class="goalkeeper"></div>
+                    </div>
+                    <div class="ball football-ball"></div>
+                    <div class="power-meter">
+                        <div class="power-bar"></div>
+                    </div>
+                    <button class="shoot-btn">Kick!</button>
+                </div>
+
+                <!-- American Football -->
+                <div class="sport-game american-football-game" id="american-football-game">
+                    <div class="goal-post">
+                        <div class="post-left"></div>
+                        <div class="post-top"></div>
+                        <div class="post-right"></div>
+                    </div>
+                    <div class="ball american-football-ball"></div>
+                    <div class="power-meter">
+                        <div class="power-bar"></div>
+                    </div>
+                    <div class="angle-selector">
+                        <div class="angle-indicator"></div>
+                    </div>
+                    <button class="shoot-btn">Kick!</button>
+                </div>
+
+                <!-- Cricket -->
+                <div class="sport-game cricket-game" id="cricket-game">
+                    <div class="cricket-stump"></div>
+                    <div class="cricket-bat"></div>
+                    <div class="cricket-ball"></div>
+                    <div class="timing-meter">
+                        <div class="timing-indicator"></div>
+                        <div class="perfect-zone"></div>
+                    </div>
+                    <button class="shoot-btn">Hit!</button>
+                </div>
+
+                <!-- Basketball -->
+                <div class="sport-game basketball-game" id="basketball-game">
+                    <div class="basketball-hoop">
+                        <div class="backboard"></div>
+                        <div class="rim"></div>
+                        <div class="net"></div>
+                    </div>
+                    <div class="ball basketball-ball"></div>
+                    <div class="power-meter">
+                        <div class="power-bar"></div>
+                    </div>
+                    <div class="angle-selector">
+                        <div class="angle-indicator"></div>
+                    </div>
+                    <button class="shoot-btn">Shoot!</button>
+                </div>
+            </div>
+
+            <!-- Result display -->
+            <div class="result-container hidden">
+                <div class="result-icon"></div>
+                <div class="result-message"></div>
+                <div class="points-earned"></div>
+                <button class="continue-btn">Continue</button>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <button class="reset-btn">New Game</button>
+            <a href="https://github.com/laoluah/multi-sport-game" target="_blank" class="github-link">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+        </div>
+
+        <!-- Game ending modal -->
+        <div class="game-over-modal hidden">
+            <div class="modal-content">
+                <h2>Game Over!</h2>
+                <div class="final-scores"></div>
+                <div class="winner-announcement"></div>
+                <button class="play-again-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
