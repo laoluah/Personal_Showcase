@@ -1,6 +1,35 @@
-node_modules
-dist
+# Dependencies
+node_modules/
+.npm
+package-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
 .DS_Store
-server/public
-vite.config.ts.*
-*.tar.gz
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Replit files
+.replit
+.replit.nix
+replit.nix
